@@ -1,0 +1,49 @@
+CXXC:=arm-none-eabi-g++
+CC:=arm-none-eabi-gcc
+OBJCOPY:=arm-none-eabi-objcopy
+OBJDUMP:=arm-none-eabi-objdump
+SIZE:=arm-none-eabi-size
+NM:=arm-none-eabi-nm
+AR:=arm-none-eabi-ar
+AS:=arm-none-eabi-as
+LD:=arm-none-eabi-ld
+MAKE:=make
+
+# GCC flags that are always used, regardless of whether
+# it's a debug or production build
+CFLAGS=\
+-mthumb \
+-mcpu=cortex-m0plus \
+-mno-unaligned-access \
+-Wall \
+-Wextra \
+-Wredundant-decls \
+-Warray-bounds=2 \
+-Werror=return-type \
+-Werror=logical-op \
+-Werror=array-bounds \
+-Werror=reorder \
+-Werror=type-limits \
+-Werror=cast-qual \
+-Werror=cast-align \
+-Werror=logical-not-parentheses \
+-Werror=override-init \
+-ffunction-sections \
+-fdata-sections \
+-fvisibility=hidden \
+-fomit-frame-pointer \
+-fno-strict-aliasing \
+-Wfatal-errors
+
+# flags that are only used for debug builds
+DEBUG_FLAGS=\
+-O0 \
+-g \
+-gdwarf-2 \
+-D__SAMD10D14AM__
+
+# flags that are only used for production (release) builds
+RELEASE_FLAGS=\
+-O2 \
+-D__SAMD10D13AS__ \
+-DNDEBUG

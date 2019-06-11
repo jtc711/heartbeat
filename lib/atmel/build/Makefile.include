@@ -1,0 +1,14 @@
+PROJECT_ROOT=../../..
+LIBRARY_NAME=atmel
+LIBRARY_ROOT=..
+
+include $(PROJECT_ROOT)/cfg/Makefile.global
+
+vpath %.c $(LIBRARY_ROOT)/src
+
+C_INCLUDES+=\
+-I$(LIBRARY_ROOT)
+
+C_SOURCES=\
+startup_samd10.c \
+system_samd10.c
