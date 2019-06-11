@@ -1,0 +1,12 @@
+PROJECT_ROOT=..
+APPLICATION_NAME=application
+
+include $(PROJECT_ROOT)/cfg/Makefile.global
+
+vpath %.c $(PROJECT_ROOT)/src
+
+C_INCLUDES+=\
+-I$(PROJECT_ROOT)/inc
+
+C_SOURCES=\
+main.c
