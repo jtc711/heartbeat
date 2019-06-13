@@ -6,7 +6,14 @@ include $(PROJECT_ROOT)/cfg/Makefile.global
 vpath %.c $(PROJECT_ROOT)/src
 
 C_INCLUDES+=\
--I$(PROJECT_ROOT)/inc
+-I$(PROJECT_ROOT)/inc \
+-I$(PROJECT_ROOT)/lib
 
 C_SOURCES=\
 main.c
+
+LIBRARIES=\
+atmel
+
+LDSCRIPT=\
+samd10d14as_flash.ld

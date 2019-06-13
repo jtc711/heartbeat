@@ -1,7 +1,5 @@
 include Makefile.include
 
-BINDIR:=$(LIBRARY_ROOT)/bin
-
 C_OBJS:=$(C_SOURCES:.c=.o)
 
 debug: CFLAGS+=$(DEBUG_FLAGS)
@@ -15,8 +13,8 @@ all: debug
 _all: $(C_OBJS)
 
 $(C_OBJS): %.o:%.c
-	@echo "compiling $<"
+	@echo "[$(LIBRARY_NAME)] compiling $<"
 	@$(CC) $(CFLAGS) $(C_INCLUDES) -c $< -o $@
 
 clean:
-	-rm -f *.o *.bin *.elf *.out *.d *.map *.i *.s *.hex
+	-rm -f *.o *.bin *.elf *.out *.d *.map *.i *.s *.a *.hex
