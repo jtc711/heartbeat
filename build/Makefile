@@ -16,15 +16,15 @@ LDFLAGS=\
 -Wl,-gc-sections
 
 debug: CFLAGS+=$(DEBUG_FLAGS)
-debug: _all
+debug: $(APPLICATION_NAME).elf
+	@$(SIZE) -A $(APPLICATION_NAME).elf
 
 release: CFLAGS+=$(RELEASE_FLAGS)
-release: _all
+release: $(APPLICATION_NAME).elf
+	@$(STRIP) --strip-debug $(APPLICATION_NAME).elf
+	@$(SIZE) -A $(APPLICATION_NAME).elf
 
 all: debug
-
-_all: $(APPLICATION_NAME).elf
-	@$(SIZE) -A $(APPLICATION_NAME).elf
 
 $(APPLICATION_NAME).elf: $(C_OBJS) $(LIBRARIES)
 	$(eval LIBOBJS := $(wildcard $(addprefix $(PROJECT_ROOT)/lib/, $(LIBRARIES))/build/*.o))

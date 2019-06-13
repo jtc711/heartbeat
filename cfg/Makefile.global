@@ -3,6 +3,7 @@ CC:=arm-none-eabi-gcc
 OBJCOPY:=arm-none-eabi-objcopy
 OBJDUMP:=arm-none-eabi-objdump
 SIZE:=arm-none-eabi-size
+STRIP:=arm-none-eabi-strip
 NM:=arm-none-eabi-nm
 AR:=arm-none-eabi-ar
 AS:=arm-none-eabi-as
@@ -37,7 +38,7 @@ CFLAGS=\
 
 # flags that are only used for debug builds
 DEBUG_FLAGS=\
--O0 \
+-Og \
 -g \
 -gdwarf-2 \
 -D__SAMD10D14AM__
@@ -45,5 +46,5 @@ DEBUG_FLAGS=\
 # flags that are only used for production (release) builds
 RELEASE_FLAGS=\
 -O2 \
--D__SAMD10D13AS__ \
+-D__SAMD10D14AS__ \
 -DNDEBUG
