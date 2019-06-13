@@ -29,6 +29,8 @@
 #ifndef _SAMD10_AC_COMPONENT_
 #define _SAMD10_AC_COMPONENT_
 
+#include "inc/core_cm0plus.h"
+
 /* ========================================================================== */
 /**  SOFTWARE API DEFINITION FOR AC */
 /* ========================================================================== */

@@ -18,13 +18,13 @@ LDFLAGS=\
 debug: CFLAGS+=$(DEBUG_FLAGS)
 debug: _all
 
-release: CFLAGS+=$(DEBUG_FLAGS)
+release: CFLAGS+=$(RELEASE_FLAGS)
 release: _all
 
 all: debug
 
 _all: $(APPLICATION_NAME).elf
-	@$(SIZE) -B $(APPLICATION_NAME).elf
+	@$(SIZE) -A $(APPLICATION_NAME).elf
 
 $(APPLICATION_NAME).elf: $(C_OBJS) $(LIBRARIES)
 	$(eval LIBOBJS := $(wildcard $(addprefix $(PROJECT_ROOT)/lib/, $(LIBRARIES))/build/*.o))

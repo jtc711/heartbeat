@@ -29,6 +29,8 @@
 #ifndef _SAMD10_WDT_COMPONENT_
 #define _SAMD10_WDT_COMPONENT_
 
+#include "inc/core_cm0plus.h"
+
 /* ========================================================================== */
 /**  SOFTWARE API DEFINITION FOR WDT */
 /* ========================================================================== */

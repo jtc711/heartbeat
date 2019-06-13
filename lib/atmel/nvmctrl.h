@@ -29,6 +29,8 @@
 #ifndef _SAMD10_NVMCTRL_COMPONENT_
 #define _SAMD10_NVMCTRL_COMPONENT_
 
+#include "inc/core_cm0plus.h"
+
 /* ========================================================================== */
 /**  SOFTWARE API DEFINITION FOR NVMCTRL */
 /* ========================================================================== */

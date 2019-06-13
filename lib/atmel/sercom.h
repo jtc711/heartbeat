@@ -29,6 +29,8 @@
 #ifndef _SAMD10_SERCOM_COMPONENT_
 #define _SAMD10_SERCOM_COMPONENT_
 
+#include "inc/core_cm0plus.h"
+
 /* ========================================================================== */
 /**  SOFTWARE API DEFINITION FOR SERCOM */
 /* ========================================================================== */

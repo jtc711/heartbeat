@@ -5,7 +5,7 @@ C_OBJS:=$(C_SOURCES:.c=.o)
 debug: CFLAGS+=$(DEBUG_FLAGS)
 debug: _all
 
-release: CFLAGS+=$(DEBUG_FLAGS)
+release: CFLAGS+=$(RELEASE_FLAGS)
 release: _all
 
 all: debug
@@ -13,7 +13,7 @@ all: debug
 _all: $(C_OBJS)
 
 $(C_OBJS): %.o:%.c
-	@echo "[$(LIBRARY_NAME)] compiling $<"
+	@echo "[lib/$(LIBRARY_NAME)] compiling $<"
 	@$(CC) $(CFLAGS) $(C_INCLUDES) -c $< -o $@
 
 clean:

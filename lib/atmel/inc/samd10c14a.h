@@ -199,7 +199,7 @@ void PTC_Handler                 ( void );
 
 #include <core_cm0plus.h>
 #if !defined DONT_USE_CMSIS_INIT
-#include "system_samd10.h"
+#include "../system_samd10.h"
 #endif /* DONT_USE_CMSIS_INIT */
 
 /*@}*/
@@ -210,26 +210,26 @@ void PTC_Handler                 ( void );
 /** \defgroup SAMD10C14A_api Peripheral Software API */
 /*@{*/
 
-#include "component/ac.h"
-#include "component/adc.h"
-#include "component/dac.h"
-#include "component/dmac.h"
-#include "component/dsu.h"
-#include "component/eic.h"
-#include "component/evsys.h"
-#include "component/gclk.h"
-#include "component/hmatrixb.h"
-#include "component/mtb.h"
-#include "component/nvmctrl.h"
-#include "component/pac.h"
-#include "component/pm.h"
-#include "component/port.h"
-#include "component/rtc.h"
-#include "component/sercom.h"
-#include "component/sysctrl.h"
-#include "component/tc.h"
-#include "component/tcc.h"
-#include "component/wdt.h"
+#include "../ac.h"
+#include "../adc.h"
+#include "../dac.h"
+#include "../dmac.h"
+#include "../dsu.h"
+#include "../eic.h"
+#include "../evsys.h"
+#include "../gclk.h"
+#include "../hmatrixb.h"
+#include "../mtb.h"
+#include "../nvmctrl.h"
+#include "../pac.h"
+#include "../pm.h"
+#include "../port.h"
+#include "../rtc.h"
+#include "../sercom.h"
+#include "../sysctrl.h"
+#include "../tc.h"
+#include "../tcc.h"
+#include "../wdt.h"
 /*@}*/
 
 /* ************************************************************************** */

@@ -145,8 +145,9 @@
 #endif
 
 #include <stdint.h>                      /* standard types definitions                      */
-#include "inc/core_cmInstr.h"                /* Core Instruction Access                         */
-#include "inc/core_cmFunc.h"                 /* Core Function Access                            */
+#include "samd10.h"                      /* standard types definitions                      */
+#include "core_cmInstr.h"                /* Core Instruction Access                         */
+#include "core_cmFunc.h"                 /* Core Function Access                            */
 
 #ifdef __cplusplus
 }
@@ -750,7 +751,7 @@ __STATIC_INLINE uint32_t NVIC_GetPriority(IRQn_Type IRQn)
     return((uint32_t)(((NVIC->IP[ _IP_IDX(IRQn)] >> _BIT_SHIFT(IRQn) ) & 0xFF) >> (8 - __NVIC_PRIO_BITS)));  } /* get priority for device specific interrupts  */
 }
 
-
+#include "core_cmInstr.h"                /* Core Instruction Access                         */
 /** \brief  System Reset
 
     The function initiates a system reset request to reset the MCU.

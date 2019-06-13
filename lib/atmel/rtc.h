@@ -29,6 +29,8 @@
 #ifndef _SAMD10_RTC_COMPONENT_
 #define _SAMD10_RTC_COMPONENT_
 
+#include "inc/core_cm0plus.h"
+
 /* ========================================================================== */
 /**  SOFTWARE API DEFINITION FOR RTC */
 /* ========================================================================== */
