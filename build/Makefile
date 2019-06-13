@@ -1,7 +1,7 @@
 include Makefile.include
 
 C_OBJS:=$(C_SOURCES:.c=.o)
-LIBOBJS:=$(wildcard $(addprefix $(PROJECT_ROOT)/lib/, $(LIBRARIES))/build/*.o)
+
 
 CLEANALLOS:=$(addsuffix /build/*.o, $(addprefix $(PROJECT_ROOT)/lib/, $(LIBRARIES)))
 CLEANALLAS:=$(addsuffix .a, $(basename $(CLEANALLOS)))
@@ -27,6 +27,7 @@ _all: $(APPLICATION_NAME).elf
 	@$(SIZE) -B $(APPLICATION_NAME).elf
 
 $(APPLICATION_NAME).elf: $(C_OBJS) $(LIBRARIES)
+	$(eval LIBOBJS := $(wildcard $(addprefix $(PROJECT_ROOT)/lib/, $(LIBRARIES))/build/*.o))
 	@$(CC) $(CFLAGS) $(LIBOBJS) $(C_OBJS) $(LDFLAGS)
 
 $(C_OBJS): %.o:%.c
